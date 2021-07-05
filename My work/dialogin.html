@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+    <head>
+ <meta charset="utf-8">
+       <title>Моя страница</title>
+       <link rel="stylesheet" href="">
+      <script>
+       function Onclick(){
+           var dialog=document.getElementById('Dialog');
+           document.getElementById('showDialog').onclick=function()
+           {
+              dialog.show(); 
+           };
+           document.getElementById('closeDialog').onclick=function()
+           {
+             dialog.close();   
+           };
+       };
+
+        </script>
+
+    </head>
+        <body>
+            <dialog id='Dialog'>
+                <p>Пример диалога</p>
+            <button id='closeDialog'>Закрыть</button>
+                </dialog>
+             <button id='showDialog' onclick="Onclick();">Открыть окно</button>   
+            
+            
+    </body>
+   
+            </html>

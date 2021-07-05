@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!--Помещаем файл jquery-ui.min.css перед каскадной таблицей сайта-->
+        <link href='jquery-ui.min.css' rel="stylesheet">
+        <link href="./site.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--jQueri UI не будет работать без jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+         <!--Создание диалогового окна, №1-->
+        <script>
+            $(document).ready(function(){
+                $('#hello').dialog({
+                show: 'slideDown', //окно появляется
+                    hide: 'slideUp' // окно исчезает
+                })
+            });// конец ready
+            
+        </script>
+        
+         <!--Создание диалогового окна, №2-->
+        <script>
+            $(document).ready(function(){
+             $('#primer').dialog({
+               modal:true, 
+                 resizable: false,
+                 draggable: false,
+                 hide: 'explode'
+            });   
+            });
+        </script>
+        
+        
+         <!--Создание диалогового окна №3--> 
+          <script>
+            $(document).ready(function(){
+            $('#confirm').dialog({
+             modal: true,
+                 autoOpen: false,
+                buttons:{
+                 'Подтвердить':function(){
+                    $('#animals').effect('explode');
+                     $(this).dialog('close');
+                 },
+                    'Отменить': function(){
+                     $(this).dialog('close');   
+                    }
+                }
+            }); //конец dialog confirm
+                $('#animals').click(function(){
+                 $('#confirm').dialog('open');   
+                });//конец click
+            });//конец ready
+        </script>
+        
+        
+        <!--Создание всплывающих подсказок, пример №1--> 
+        <script>
+            $(document).ready(function(){
+            $('[title]').tooltip();
+            });//конец ready
+        </script>
+        
+          <!--Расширение диалогового окна-->
+        <script>
+            $(document).ready(function(){
+            $('#cat').tooltip({
+            content: '<img src='styles/1_3.jpg' alt="котенок">'    
+            });
+            });//конец ready
+        </script>
+        
+    </head>
+    <body>
+        <!--Создание диалогового окна №1-->
+        <div  id="hello" titlе="Привет, Мир!">
+            <р>Это диалоговое окно  на  самом деле  является элементом div,  размещенным на  странице с  помощью  абсолютного позиционирования.</р><р>Попробуйте перетащить диалоговое окно  по  экрану.Вы  можете это  сделать!</р>
+        </div>
+      <!--Создание диалогового окна №2-->  
+        <div id='primer' titlе="Пример 2">
+            <p>Второй пример окна</p>
+        </div>
+        
+       
+        <br/>
+         <!--Создание диалогового окна №3--> 
+        
+         <div id='confirm' >
+             <p>Вы уверены, что не хотите взять к себе щенка</p>
+        </div>
+        <img src='./styles/1_5.jpg' alt='щенок' id='animals'>
+        
+        <br/>
+        <br/>
+        <!--Создание всплывающих подсказок, пример №1--> 
+        <a href='#' title='котенок'><img src="styles/1_3.jpg"></a>
+        <!--Расширение диалогового окна-->
+        <a href="#" id='cat'>Котенок Вася</a>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+.ui-menu{
+width:10em;    
+}
+
+#mainMenu>li{
+ width:10em;
+    float:left;
+}
+.ui-menu .ui-menu{
+width:10em;    
+}
+#mainMenu{
+    float:left;
+}
+
+/* Переопределим класс, взятый из jqueri-ui*/
+.ui-autocomplete-input{
+ background-color: darkred;   
+}
